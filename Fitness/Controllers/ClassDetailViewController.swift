@@ -15,19 +15,19 @@ class ClassDetailViewController: UIViewController {
     var gymClassInstance: GymClassInstance!
 
     var titleLabel: UILabel!
-    var locationLabel = UILabel()
+    var locationLabel: UILabel!
     var instructorLabel: UILabel!
-    var durationLabel = UILabel()
+    var durationLabel: UILabel!
 
-    var classImageView = UIImageView()
+    var classImageView: UIImageView!
     var imageFilterView: UIView!
     var semicircleView: UIImageView!
 
     var backButton: UIButton!
     var starButton: UIButton!
 
-    var dateLabel = UILabel()
-    var timeLabel = UILabel()
+    var dateLabel: UILabel!
+    var timeLabel: UILabel!
     var date: Date!
 
     var addToCalendarButton: UIButton!
@@ -92,12 +92,14 @@ class ClassDetailViewController: UIViewController {
         setupHeader()
 
         //DATE
+        dateLabel = UILabel()
         dateLabel.font = ._16MontserratLight
         dateLabel.textAlignment = .center
         dateLabel.textColor = .fitnessBlack
         dateLabel.sizeToFit()
         contentView.addSubview(dateLabel)
 
+        timeLabel = UILabel()
         timeLabel.font = ._16MontserratMedium
         timeLabel.textAlignment = .center
         timeLabel.textColor = .fitnessBlack
@@ -190,6 +192,7 @@ class ClassDetailViewController: UIViewController {
     }
     
     func setupHeader() {
+        classImageView = UIImageView()
         classImageView.contentMode = UIViewContentMode.scaleAspectFill
         classImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(classImageView)
@@ -211,6 +214,7 @@ class ClassDetailViewController: UIViewController {
         titleLabel.sizeToFit()
         contentView.addSubview(titleLabel)
         
+        locationLabel = UILabel()
         locationLabel.font = ._14MontserratLight
         locationLabel.textAlignment = .center
         locationLabel.textColor = .white
@@ -225,6 +229,7 @@ class ClassDetailViewController: UIViewController {
         instructorLabel.sizeToFit()
         contentView.addSubview(instructorLabel)
         
+        durationLabel = UILabel()
         durationLabel.font = ._18Bebas
         durationLabel.textAlignment = .center
         durationLabel.textColor = .fitnessBlack

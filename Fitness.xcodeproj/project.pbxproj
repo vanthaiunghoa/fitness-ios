@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CB5E9B42155BCE4008C2941 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CB5E9B32155BCE4008C2941 /* schema.json */; };
+		1CB5E9B62155C025008C2941 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5E9B52155C025008C2941 /* API.swift */; };
 		1CCCEB97215058C5001B3551 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1CCCEB96215058C5001B3551 /* .swiftlint.yml */; };
 		635AF234204F85000020F6C6 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635AF233204F85000020F6C6 /* ClassDetailViewController.swift */; };
 		65E914EB207C697800A72101 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E914EA207C697800A72101 /* Keys.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CB5E9B32155BCE4008C2941 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		1CB5E9B52155C025008C2941 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1CCCEB96215058C5001B3551 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		25DE0870693CFCF450514DCD /* Pods-Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fitness/Pods-Fitness.release.xcconfig"; sourceTree = "<group>"; };
 		3734B4297C424A77DA3AF7D6 /* Pods_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +208,7 @@
 		C7DFABC2204206E000545B0B = {
 			isa = PBXGroup;
 			children = (
+				1CB5E9B32155BCE4008C2941 /* schema.json */,
 				1CCCEB96215058C5001B3551 /* .swiftlint.yml */,
 				8DBB784E2139849B002BE0E0 /* Constants.swift */,
 				8D95F448208704010095B8AB /* Secrets */,
@@ -226,6 +231,7 @@
 		C7DFABCD204206E000545B0B /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				1CB5E9B52155C025008C2941 /* API.swift */,
 				C7DFABCE204206E000545B0B /* AppDelegate.swift */,
 				C71E8A022091653900542FA3 /* Networking */,
 				C736372D2082F1F2004751F5 /* Models */,
@@ -330,6 +336,7 @@
 			buildConfigurationList = C7DFABDD204206E000545B0B /* Build configuration list for PBXNativeTarget "Fitness" */;
 			buildPhases = (
 				9BD15CB1CD033C4DBE57E681 /* [CP] Check Pods Manifest.lock */,
+				1CB5E9B22155BBEB008C2941 /* ShellScript */,
 				C7DFABC7204206E000545B0B /* Sources */,
 				C7DFABC8204206E000545B0B /* Frameworks */,
 				C7DFABC9204206E000545B0B /* Resources */,
@@ -389,6 +396,7 @@
 				8D5EA47B208ED6E700E98E6C /* Lato-Bold.ttf in Resources */,
 				C7EBD5B02062F14D00D76A8B /* Montserrat-Regular.ttf in Resources */,
 				C76A70B2205ED2E100E60CC8 /* Montserrat-Light.ttf in Resources */,
+				1CB5E9B42155BCE4008C2941 /* schema.json in Resources */,
 				C76A70B4205ED2E900E60CC8 /* Montserrat-Medium.ttf in Resources */,
 				8D95F44A2087042F0095B8AB /* Keys.plist in Resources */,
 				C7DFABD9204206E000545B0B /* LaunchScreen.storyboard in Resources */,
@@ -402,6 +410,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1CB5E9B22155BBEB008C2941 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json API.swift";
+		};
 		1CEB3B0B21503E5100BB5B61 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +445,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -433,6 +455,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -493,6 +516,7 @@
 				C73637282082F170004751F5 /* Gym.swift in Sources */,
 				8DBB784F2139849B002BE0E0 /* Constants.swift in Sources */,
 				8DD7C77720844175004EB196 /* DropdownFooterView.swift in Sources */,
+				1CB5E9B62155C025008C2941 /* API.swift in Sources */,
 				635AF234204F85000020F6C6 /* ClassDetailViewController.swift in Sources */,
 				C7DFABCF204206E000545B0B /* AppDelegate.swift in Sources */,
 				8DD7C7752083E0FB004EB196 /* DropdownViewCell.swift in Sources */,

@@ -5,6 +5,7 @@ target 'Fitness' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'AlamofireImage'
+  pod 'Apollo'
   pod 'Crashlytics'
   pod 'Fabric'
 	pod 'Moya'

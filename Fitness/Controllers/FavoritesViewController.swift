@@ -73,6 +73,11 @@ class FavoritesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 250
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailView = ClassDetailViewController()
+        present(detailView, animated: true, completion: nil)
+    }
 
     // MARK: - CONSTRAINTS
     func setupConstraints() {
