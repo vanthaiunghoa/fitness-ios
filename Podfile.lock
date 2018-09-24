@@ -20,7 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage
-  - Apollo
+  - Apollo (~> 0.9)
   - Crashlytics
   - Fabric
   - Moya
@@ -53,6 +53,6 @@ SPEC CHECKSUMS:
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   WARangeSlider: 54b3e0853b8d16c444fd539005901aecee86837d
 
-PODFILE CHECKSUM: 0c1dc9db73d05eba328979eb7d2be97472c65f50
+PODFILE CHECKSUM: 6c9abe68ed1338e1ccab5a894c10eb4bb30085fc
 
 COCOAPODS: 1.5.3

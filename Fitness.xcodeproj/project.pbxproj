@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C9350B821594FD60046D732 /* Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C9350B621594FD60046D732 /* Fitness.xcdatamodeld */; };
 		1CB5E9B42155BCE4008C2941 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CB5E9B32155BCE4008C2941 /* schema.json */; };
 		1CB5E9B62155C025008C2941 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5E9B52155C025008C2941 /* API.swift */; };
 		1CCCEB97215058C5001B3551 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1CCCEB96215058C5001B3551 /* .swiftlint.yml */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C9350B721594FD60046D732 /* Fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fitness.xcdatamodel; sourceTree = "<group>"; };
 		1CB5E9B32155BCE4008C2941 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		1CB5E9B52155C025008C2941 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1CCCEB96215058C5001B3551 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		C7DFABC2204206E000545B0B = {
 			isa = PBXGroup;
 			children = (
+				1C9350B621594FD60046D732 /* Fitness.xcdatamodeld */,
 				1CB5E9B32155BCE4008C2941 /* schema.json */,
 				1CCCEB96215058C5001B3551 /* .swiftlint.yml */,
 				8DBB784E2139849B002BE0E0 /* Constants.swift */,
@@ -336,13 +339,13 @@
 			buildConfigurationList = C7DFABDD204206E000545B0B /* Build configuration list for PBXNativeTarget "Fitness" */;
 			buildPhases = (
 				9BD15CB1CD033C4DBE57E681 /* [CP] Check Pods Manifest.lock */,
-				1CB5E9B22155BBEB008C2941 /* ShellScript */,
+				1CB5E9B22155BBEB008C2941 /* Apollo */,
 				C7DFABC7204206E000545B0B /* Sources */,
 				C7DFABC8204206E000545B0B /* Frameworks */,
 				C7DFABC9204206E000545B0B /* Resources */,
 				7B68B6796476F8A7F1E6B485 /* [CP] Embed Pods Frameworks */,
 				1CEB3B0B21503E5100BB5B61 /* ShellScript */,
-				8D29EFD320431FCA005B1CC8 /* ShellScript */,
+				8D29EFD320431FCA005B1CC8 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -410,13 +413,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1CB5E9B22155BBEB008C2941 /* ShellScript */ = {
+		1CB5E9B22155BBEB008C2941 /* Apollo */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Apollo;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,13 +470,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8D29EFD320431FCA005B1CC8 /* ShellScript */ = {
+		8D29EFD320431FCA005B1CC8 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +513,7 @@
 				C736372C2082F19C004751F5 /* Instructor.swift in Sources */,
 				C7EBD5A72062E60A00D76A8B /* ClassListViewController.swift in Sources */,
 				8D03EE05206C473200EF83C7 /* HomeScreenHeaderView.swift in Sources */,
+				1C9350B821594FD60046D732 /* Fitness.xcdatamodeld in Sources */,
 				C71E8A012091651100542FA3 /* GymFilterCell.swift in Sources */,
 				8D03EE09206C477600EF83C7 /* AllGymsCell.swift in Sources */,
 				8D95F450208719030095B8AB /* GymHoursHeaderView.swift in Sources */,
@@ -730,6 +736,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1C9350B621594FD60046D732 /* Fitness.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C9350B721594FD60046D732 /* Fitness.xcdatamodel */,
+			);
+			currentVersion = 1C9350B721594FD60046D732 /* Fitness.xcdatamodel */;
+			path = Fitness.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C7DFABC3204206E000545B0B /* Project object */;
 }
